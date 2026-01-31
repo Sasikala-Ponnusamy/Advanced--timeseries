@@ -18,6 +18,6 @@ columns:date, store, sales, promo, holiday
 - LSTM model training
 - RMSE evaluation
 - SHAP explainability
-  
-  
+  Due to compatibility issues between SHAP and LSTM ,model interpretation is explained using trend analysis,
+  Sesonability patterns and actual vs predicted sales plots.
 
