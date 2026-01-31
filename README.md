@@ -1,15 +1,23 @@
-# Store Sales Time Series Analysis
-This project analyzes store sales data using python.
-The goal is to understand sales trends and perform time series forecasting.
+# Advanced Time Series Forecasting with LSTM
+This project predicts store sales using LSTM neural networks.
+
 ## Dataset
 Source:Kaggle -Store Sales Dataset
+columns:date, store, sales, promo, holiday
 ## Tools used
 - Python
 - Pandas
 - Matplotlib
-- statsmodels
+- tensorflow
+- numpy
+- shap
 ## Steps
-- Data Loading
-- Data Cleaning
-- Exploratory Data Analysis
-- Time Series Forecasting
+- Data preprocessing
+- Missing value handlings
+- Visualization
+- LSTM model training
+- RMSE evaluation
+- SHAP explainability
+  
+  
+
