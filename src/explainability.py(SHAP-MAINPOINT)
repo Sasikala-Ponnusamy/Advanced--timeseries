@@ -1,0 +1,5 @@
+import shap
+def explain(model,X_train,X_test):
+  explainer=shap.DeepExplainer(model,X_train[:100])
+  shap_values=explainer.shap_values(X_test[:10])
+  shap.summary_plot(shap_values,X_test[:10])
