@@ -42,6 +42,14 @@ Training
 Evaluation
 Explainability
 This separation of concerns improves readability, maintainability, and scalability.
+#Results
+##Training &Validation Loss
+shows model convergence over epochs:
+![Loss model plot](training_validation_loss.png)
+###Actual vs Predicted Sales
+compares model predictions with actual sales:
+![Prediction plot](actual_vs_predicted.png
+
 🚧 Limitations
 Analysis limited to a single store
 Univariate forecasting without external features
