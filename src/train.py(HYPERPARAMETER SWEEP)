@@ -1,0 +1,15 @@
+from src.model import build_model
+def train_model(X_train,y_train):
+  best_model=None
+  best_loss=float(*inf*)
+  for units in[32,64]:
+    for epochs in [20,50]:
+      model=build_model(X_train.shape[1:],units)
+      history=model.fit(X_train, y_train,
+                        epochs=epochs,verbose=0)
+      loss=history.history['loss'][-1]
+      if loss<best_loss=loss
+      best_model=model
+ return best_model      
+                        
+                       
