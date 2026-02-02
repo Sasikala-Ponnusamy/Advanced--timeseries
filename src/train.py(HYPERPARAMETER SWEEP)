@@ -21,7 +21,7 @@ plt.title('Training vs Validation Loss')
 plt.legend()
 
 plt.savefig("training_validation_loss.png")
-plt.close()                        
+plt.show()                        
 # Predictions on validation/test data
 y_pred = model.predict(X_val)
 
@@ -36,6 +36,8 @@ plt.xlabel("Time Steps")
 plt.ylabel("Sales")
 plt.title("Actual vs Predicted Sales")
 plt.legend()
-
 plt.savefig("actual_vs_predicted.png")
-plt.close()                       
+plt.show()                      
+                                            
+                      
+                      
