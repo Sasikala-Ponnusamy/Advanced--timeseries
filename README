@@ -1,0 +1,53 @@
+🔹 Advanced Time Series Forecasting with LSTM – Implementation Details
+This project implements an end-to-end time series forecasting pipeline using an LSTM neural network, following production-ready engineering practices and interpretability requirements.
+📊 Dataset
+Source: Kaggle – Store Sales Dataset
+Columns used:
+date – temporal index
+sales – target variable
+The dataset is chronologically sorted to preserve temporal dependencies.
+⚙️ Data Preprocessing
+Missing values are handled using forward fill (FFILL) to maintain sales continuity.
+Sales values are scaled using MinMaxScaler to stabilize LSTM training.
+A sliding window approach (30 days) is used to convert the time series into a supervised learning format.
+🧠 Model Architecture
+Model: LSTM (Long Short-Term Memory)
+Input: Previous 30 days of sales
+Hidden units: Tuned between 32 and 64
+Output: Next-day sales prediction
+Optimizer: Adam
+Loss function: Mean Squared Error (MSE)
+🔁 Hyperparameter Tuning
+A formal hyperparameter sweep is conducted to improve robustness:
+LSTM units: 32, 64
+Epochs: 20, 50
+The best configuration is selected based on minimum training loss.
+📈 Evaluation Metrics
+Two evaluation metrics are used:
+RMSE – Measures overall prediction error magnitude
+MAPE – Provides domain-specific interpretability for retail forecasting
+Using both metrics ensures technical accuracy and business relevance.
+🔍 Model Explainability (SHAP)
+To address the black-box nature of LSTM models, SHAP (SHapley Additive Explanations) is integrated:
+SHAP DeepExplainer is applied on the trained LSTM model
+Feature importance is visualized using SHAP summary plots
+Results indicate that recent historical sales values have the highest impact on predictions
+This satisfies the explainability requirement specified in the project prompt.
+🧩 Code Structure & Production Readiness
+The project is implemented using a modular structure:
+Data loading
+Preprocessing
+Model construction
+Training
+Evaluation
+Explainability
+This separation of concerns improves readability, maintainability, and scalability.
+🚧 Limitations
+Analysis limited to a single store
+Univariate forecasting without external features
+Hyperparameter tuning limited to a small search space
+🔮 Future Enhancements
+Incorporation of external variables (holidays, promotions)
+Multivariate and multi-store forecasting
+Advanced tuning using Keras Tuner
+Deployment as a REST API
