@@ -22,4 +22,20 @@ plt.legend()
 
 plt.savefig("training_validation_loss.png")
 plt.close()                        
-                       
+# Predictions on validation/test data
+y_pred = model.predict(X_val)
+
+# Flatten for plotting
+y_val_flat = y_val.reshape(-1)
+y_pred_flat = y_pred.reshape(-1)
+
+plt.figure()
+plt.plot(y_val_flat[:100], label="Actual")
+plt.plot(y_pred_flat[:100], label="Predicted")
+plt.xlabel("Time Steps")
+plt.ylabel("Sales")
+plt.title("Actual vs Predicted Sales")
+plt.legend()
+
+plt.savefig("actual_vs_predicted.png")
+plt.close()                       
